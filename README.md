@@ -1,8 +1,8 @@
-# SunFounder Mars Rover — Wireless Joystick Control with ESP-NOW and UART
+# Wireless Joystick Control with ESP-NOW and UART
 
 ## Overview
 
-This project is based on the **SunFounder Mars Rover (GalaxyRVR)**, which uses an **Arduino Uno R3** and the GalaxyRVR motor shield. I added an **ESP32 receiver** to the rover so it can be controlled wirelessly with a joystick.
+This project is based on the **SunFounder Mars Rover (GalaxyRVR)**, which uses an **Arduino Uno R3** and the GalaxyRVR shield. I added an **ESP32 receiver** to the rover so it can be controlled wirelessly with a joystick.
 
 A second ESP32 reads the joystick position and sends the control values to the rover over **ESP-NOW**. The ESP32 mounted on the rover forwards the received values to the Arduino over **UART**. The Arduino then controls the motors using the `SoftPWM` library.
 
@@ -112,10 +112,4 @@ The Arduino program includes a **300 ms UART timeout**: if no valid UART message
 
 The **SunFounder Mars Rover can now be controlled wirelessly with a joystick**. ESP-NOW handles communication between the two ESP32 boards, UART connects the rover's ESP32 receiver to the Arduino Uno, and the Arduino continues to drive the motors through the GalaxyRVR shield.
 
-## Possible Future Improvements
 
-- Send sensor readings and battery status back to the controller
-- Add wheel encoders and closed-loop speed control
-- Improve packet validation and radio-loss failsafe behavior
-- Implement autonomous navigation using distance sensors or a camera
-- Integrate a robotic arm
